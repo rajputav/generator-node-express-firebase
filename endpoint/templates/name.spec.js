@@ -1,10 +1,10 @@
 'use strict';
 
-var should = require('should');
-var app = require('../../app');
-var request = require('supertest');
+const should = require('should');
+const app = require('../../app');
+const request = require('supertest');
 
-var config = require('../../config/environment');
+const config = require('../../config/environment');
 
 describe('GET <%= route %>', function() {
 

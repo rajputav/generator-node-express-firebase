@@ -1,9 +1,9 @@
 'use strict';
 
-var express = require('express');
-var controller = require('./<%= name %>.controller');
+const express = require('express');
+const controller = require('./<%= name %>.controller');
 
-var router = express.Router();
+const router = express.Router();
 
 router.get('/', controller.index);
 

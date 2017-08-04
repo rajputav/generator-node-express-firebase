@@ -1,11 +1,9 @@
 'use strict';
 
+const firebase = require("firebase");
+const validator = require('validator');
 
-var firebase = require("firebase");
-var validator = require('validator');
-
-
-var config = require('../../config/environment');
+const config = require('../../config/environment');
 
 
 // Get list of <%= name %>s
