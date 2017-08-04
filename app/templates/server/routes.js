@@ -4,21 +4,24 @@
 
 'use strict';
 
-var path = require('path');
-var config = require('./config/environment');
-var firebase = require("firebase");
+const path = require('path');
+const config = require('./config/environment');
+const firebase = require("firebase");
+const admin = require('firebase-admin');
 
-//initlize firebase
-firebase.initializeApp({
+//initialize firebase
+
+const configCredentials = {
   databaseURL: config.firebase.databaseURL,
-  serviceAccount: config.firebase.serviceAccount
-});
+  credential: admin.credential.cert(config.firebase.serviceAccount)
+}
 
-
+admin.initializeApp(configCredentials);
 
 module.exports = function(app) {
 
   // Insert routes below
+
   app.use('/api/things', require('./api/thing'));
   <% if (filters.auth) { %>app.use('/api/users', require('./api/user'));
 
